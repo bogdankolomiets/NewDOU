@@ -9,5 +9,9 @@ import dagger.Component;
  */
 @Component(modules = AppModule.class)
 public interface AppComponent {
+  
+  @Named(Constants.EXECUTOR_THREAD) Scheduler executorScheduler();
+  
+  @Named(Constants.UI_THREAD) Scheduler uiScheduler();
 
 }
