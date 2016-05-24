@@ -22,10 +22,19 @@ public class AppModule {
         mApplication = application;
     }
 
-    @Singleton
-    @Provides
+    @Provides @Singleton
     Application provideApplication() {
         return mApplication;
+    }
+    
+    @Provides @Named(Constants.EXECUTOR_THREAD)
+    Scheduler provideExecutorScheduler() {
+        return Schedulers.newThread();
+    }
+    
+    @Provides @Named(Constants.UI_THREAD)
+    Scheduler provideUIScheduler() {
+        return AndroidSchedulers.mainThread();
     }
 
 }
