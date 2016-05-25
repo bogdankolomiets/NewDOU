@@ -1,13 +1,18 @@
-package com.example.bogdan.newdou.di;
+package com.example.bogdan.newdou.di.module;
 
 import android.app.Application;
 
 import com.example.bogdan.newdou.App;
+import com.example.bogdan.newdou.Constants;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import rx.Scheduler;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * @author Bogdan Kolomiets
@@ -27,12 +32,12 @@ public class AppModule {
         return mApplication;
     }
     
-    @Provides @Named(Constants.EXECUTOR_THREAD)
+    @Provides @Named(Constants.DI.EXECUTOR_THREAD)
     Scheduler provideExecutorScheduler() {
         return Schedulers.newThread();
     }
     
-    @Provides @Named(Constants.UI_THREAD)
+    @Provides @Named(Constants.DI.UI_THREAD)
     Scheduler provideUIScheduler() {
         return AndroidSchedulers.mainThread();
     }

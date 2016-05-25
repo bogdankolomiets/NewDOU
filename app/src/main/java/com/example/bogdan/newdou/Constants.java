@@ -8,4 +8,11 @@ public class Constants {
 		
 		public static final String EXECUTOR_THREAD = "EXECUTOR_THREAD";
 	}
+
+	public static final class LIFECYCLE {
+
+		public static final String FRAGMENT = "fragment";
+
+		public static final String ACTIVITY =  "activity";
+	}
 }

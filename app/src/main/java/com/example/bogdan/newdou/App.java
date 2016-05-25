@@ -1,11 +1,10 @@
 package com.example.bogdan.newdou;
 
 import android.app.Application;
-import android.test.ApplicationTestCase;
 
-import com.example.bogdan.newdou.di.AppComponent;
-import com.example.bogdan.newdou.di.AppModule;
-import com.example.bogdan.newdou.di.DaggerAppComponent;
+import com.example.bogdan.newdou.di.component.AppComponent;
+import com.example.bogdan.newdou.di.module.AppModule;
+import com.example.bogdan.newdou.di.component.DaggerAppComponent;
 
 /**
  * @author Bogdan Kolomiets
@@ -18,6 +17,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        resolveDependecies();
     }
 
     private void resolveDependecies() {
