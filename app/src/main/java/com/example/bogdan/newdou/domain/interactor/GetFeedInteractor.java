@@ -15,17 +15,18 @@ import rx.Scheduler;
  * @date 25.05.16
  */
 public class GetFeedInteractor extends Interactor{
-    private FeedRepository mFeedRepository;
-
+    private final FeedRepository mFeedRepository;
+    private final String mUrl;
     @Inject
-    public GetFeedInteractor(FeedRepository feedRepository,
+    public GetFeedInteractor(String url, FeedRepository feedRepository,
                              @Named(Constants.DI.EXECUTOR_THREAD)Scheduler mExecutorThread,
                              @Named(Constants.DI.UI_THREAD)Scheduler mUIScheduler) {
         super(mExecutorThread, mUIScheduler);
         mFeedRepository = feedRepository;
+        mUrl = url;
     }
     @Override
     protected Observable buildInteractorObservable() {
-        return mFeedRepository.getFeed();
+        return mFeedRepository.getFeed(mUrl);
     }
 }

@@ -18,6 +18,6 @@ public interface FeedRepository {
      * Get feeds from stored URL
      * @return Observable with feed
      */
-    Observable<List<FeedItem>> getFeed();
+    Observable<List<FeedItem>> getFeed(String url);
 
 }
