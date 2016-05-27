@@ -1,11 +1,11 @@
-package com.example.bogdan.newdou.domain;
+package com.example.bogdan.newdou.data.entity;
 
 /**
  * @author Bogdan Kolomiets
  * @version 1
- * @date 25.05.16
+ * @date 27.05.16
  */
-public class FeedItem {
+public class FeedItemEntity {
     private String mUrl;
     private String mAuthor;
     private String mDate;
@@ -15,10 +15,10 @@ public class FeedItem {
     private String mTopic;
     private String mTags;
 
-    public FeedItem() {
+    public FeedItemEntity() {
     }
 
-    public FeedItem(String url, String author, String date, int watchCount, String title, String description, String topic, String tags) {
+    public FeedItemEntity(String url, String author, String date, int watchCount, String title, String description, String topic, String tags) {
         mUrl = url;
         mAuthor = author;
         mDate = date;

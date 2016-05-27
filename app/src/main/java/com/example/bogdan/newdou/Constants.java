@@ -15,4 +15,8 @@ public class Constants {
 
 		public static final String ACTIVITY =  "activity";
 	}
+
+    public static final class HTTP {
+        public static final String BASE_URL = "https://dou.ua/lenta/";
+    }
 }
